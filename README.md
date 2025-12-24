@@ -159,25 +159,10 @@ Notification: {
 
 ### Setup
 1. Start MongoDB locally on default port 27017
-2. Install dependencies for each service:
-   ```bash
-   cd backend/auth-service && npm install
-   cd ../restaurant-service && npm install
-   # Repeat for all services
-   cd ../../frontend && npm install
-   ```
-3. Start each service in separate terminals:
-   ```bash
-   cd backend/auth-service && npm run dev
-   cd ../restaurant-service && npm run dev
-   cd ../order-service && npm run dev
-   cd ../delivery-service && npm run dev
-   cd ../payment-service && npm run dev
-   cd ../notification-service && npm run dev
-   cd ../../frontend && npm run dev
-   ```
-4. Frontend runs on http://localhost:5173
-5. Services run on ports 3001-3006
+2. Run all the services at once using the command 
+  **pm3 start ./ecosystem.config.js
+3. Frontend runs on http://localhost:5173
+4. Services run on ports 3001-3006
 
 ### Mock Data
 - Register a restaurant owner and create restaurants/menus
