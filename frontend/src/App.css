@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom components and utilities */
+@layer components {
+  .nav-link {
+    @apply px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+    @apply text-gray-600 hover:text-primary hover:bg-gray-100;
+  }
+
+  .nav-link.active {
+    @apply text-primary bg-primary bg-opacity-10;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-lg;
+    @apply transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg;
+    @apply transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+    @apply hover:shadow-md transition-shadow duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    @apply transition-colors duration-200;
+  }
+
+  .restaurant-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden;
+    @apply hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer;
+  }
+
+  .menu-item-card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-4;
+    @apply hover:shadow-md transition-shadow duration-200;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .status-confirmed {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .status-preparing {
+    @apply bg-orange-100 text-orange-800;
+  }
+
+  .status-ready {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .status-delivered {
+    @apply bg-gray-100 text-gray-800;
+  }
+
+  .status-cancelled {
+    @apply bg-red-100 text-red-800;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-primary {
+    color: #cb202d;
+  }
+
+  .bg-primary {
+    background-color: #cb202d;
+  }
+
+  .bg-primary-dark {
+    background-color: #b91c1c;
+  }
+
+  .border-primary {
+    border-color: #cb202d;
+  }
+
+  .ring-primary {
+    --tw-ring-color: #cb202d;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #cb202d;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  .mobile-full {
+    width: 100%;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cb202d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
